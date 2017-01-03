@@ -5,6 +5,7 @@
 * Maybe just use the Georgia data from the 2016 Presidential Election (but some counties are so fucking big!!!)
   * https://github.com/tonmcg/County_Level_Election_Results_12-16/blob/master/2016_US_County_Level_Presidential_Results.csv
 * https://www.cs.plu.edu/courses/csci144/fall2016/labs/lab07/lab07.pdf would make it possible to fill in the counties if we can find the correct code (maybe here https://www.cs.plu.edu/courses/csci144/fall2016/assignments.php)
+  * Actually, with the county data file we don't need to use PLU's code, we can just do it in python. I'll work on that file
 * If all of the above components work, we could create another file which contains information on which counties border, so when we create different districts, we can ensure that they are continuous by making sure every county borders at least one other county
 
 ####Pseudo-psuedo code assuming all of the above works
