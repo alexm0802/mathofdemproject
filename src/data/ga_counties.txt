@@ -6,7 +6,7 @@ Baldwin County 	45,720
 Banks County 	18,395
 Barrow County 	69,367
 Bartow County 	100,157
-Ben Hill County 	17,634
+BenHill County 	17,634
 Berrien County 	19,286
 Bibb County 	155,547
 Bleckley County 	13,063
@@ -77,7 +77,7 @@ Houston County 	139,900
 Irwin County 	9,538
 Jackson County 	60,485
 Jasper County 	13,900
-Jeff Davis County 	15,068
+JeffDavis County 	15,068
 Jefferson County 	16,930
 Jenkins County 	8,340
 Johnson County 	9,980
