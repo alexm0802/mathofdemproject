@@ -32,18 +32,20 @@ while True:
             else:
                 break
         break
-
-x_range = float(max(xcoord)) - float(min(xcoord))
-y_range = float(max(ycoord)) - float(min(ycoord))
+xmax = -80.841255
+xmin = -85.605202
+ymax = 35.000683
+ymin = 30.355408
+x_range = float(xmax) - float(xmin)
+y_range = float(ymax) - float(ymin)
 x_length = 500
 y_length = abs(x_length*y_range/x_range)
-print(y_length)
 win = GraphWin("County", x_length, y_length)
 
 vertices = []
 for i in range(0, len(xcoord)):
-    p = Point(x_length-((float(xcoord[i]) - float(min(xcoord)))/x_range)*x_length,
-    y_length-((float(ycoord[i]) - float(min(ycoord)))/y_range)*y_length)
+    p = Point(x_length-((float(xcoord[i]) - float(xmin))/x_range)*x_length,
+    y_length-((float(ycoord[i]) - float(ymin))/y_range)*y_length)
     vertices.append(p)
 n = Polygon(vertices)
 n.setFill('pink')
