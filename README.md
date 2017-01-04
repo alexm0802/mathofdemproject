@@ -1,5 +1,10 @@
 # Math of Democracy Project
 
+####Next Steps
+
+* Alex is working on making a program which finds out which counties border
+* Anna is beginning to think about an algorithm for creating districts
+
 ####Internet Stuff
 
 * Maybe just use the Georgia data from the 2016 Presidential Election (but some counties are so fucking big!!!)
@@ -46,3 +51,11 @@
 
 * Dividing the work on this project will be challenging. We will need to use Github, and also work at different times
 
+####How to push to git
+
+*Use git status to ensure everything is working properly*
+
+1. git pull
+2. git add *filename* (or . if you want to add all modified files)
+3. git commit -m "commit message"
+4. git push
