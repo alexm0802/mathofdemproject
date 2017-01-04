@@ -35,6 +35,9 @@
 * Georgia is probably a good state choice because it has a lot of small counties and it has a lot of people
 
 
+* Assuming consistent population distribution throughout counties
+
+
 * Some counties might have too many people, so we might not get a very good result BIG ISSUE ACTUALLY... Maybe premake some districts
 
 
