@@ -1,5 +1,12 @@
 # Math of Democracy Project
 
+####Project Goals
+
+* We want to make a map where districts are gerrymandered to ensure as close to proportional representation (PR) as possible
+* This is a thought experiment in producing a new type of democracy that has the same benefits as PR systems (i.e. proportional representation of political parties) and the same benefits of plurality-majority systems (i.e. representatives remain accountable to home districts)
+* We know that the efficiency gap will be very high
+* Extremely gerrymandered districts also have some benefits: very red districts can choose between two Republican candidates and very blue districts can choose between two Democratic candidates (like WA district 7)
+  
 ####Next Steps
 
 * Alex is working on making a program which finds out which counties border
