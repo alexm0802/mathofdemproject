@@ -1,4 +1,3 @@
-import numpy as np
 from graphics import *
 
 def is_numeric(s):

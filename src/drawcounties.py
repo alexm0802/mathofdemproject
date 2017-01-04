@@ -2,7 +2,6 @@
 #county name (assuming Georgia for everything)
 #Currently, it will do a lot of extra stuff that will be unnecessary later
 
-import numpy as np
 from graphics import *
 
 def is_numeric(s):

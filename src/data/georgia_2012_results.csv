@@ -1,3 +1,4 @@
+year,state,county,fips,vote_rep,vote_dem,vote_oth,vote_total,pct_rep,pct_dem,pct_oth,winner,runnerup,pct_winner,margin_winner_over_runnerup
 2012,GA,Appling,13001,5233,1758,92,7083,73.88,24.82,1.3,rep,dem,73.88,49.06
 2012,GA,Atkinson,13003,1938,930,34,2902,66.78,32.05,1.17,rep,dem,66.78,34.73
 2012,GA,Bacon,13005,3093,791,46,3930,78.7,20.13,1.17,rep,dem,78.7,58.57
