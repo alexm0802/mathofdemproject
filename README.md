@@ -4,6 +4,7 @@
 
 * Alex is working on making a program which finds out which counties border
 * Anna is beginning to think about an algorithm for creating districts
+  * http://autoredistrict.org/ has some interesting information on how to make our code not suck (basically how to go about finding the best districts
 
 ####Internet Stuff
 
@@ -34,7 +35,7 @@
 * Georgia is probably a good state choice because it has a lot of small counties and it has a lot of people
 
 
-* Some counties might have too many people, so we might not get a very good result
+* Some counties might have too many people, so we might not get a very good result BIG ISSUE ACTUALLY... Maybe premake some districts
 
 
 * Finding the code to create the map correctly could be challenging
