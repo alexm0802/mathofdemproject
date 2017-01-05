@@ -1,47 +1,49 @@
 Appling County
-Atkinson County 	8,375
-Bacon County 	11,096
-Baker County 	3,451
-Baldwin County 	45,720
-Banks County 	18,395
-Barrow County 	69,367
-Bartow County 	100,157
-BenHill County 	17,634
-Berrien County 	19,286
-Bibb County 	155,547
-Bleckley County 	13,063
-Brantley County 	18,411
-Brooks County 	16,243
-Bryan County 	30,233
-Bulloch County 	70,217
-Burke County 	23,316
-Butts County 	23,655
-Calhoun County 	6,694
-Camden County 	50,513
-Candler County 	10,998
-Carroll County 	110,527
-Catoosa County 	63,942
-Charlton County 	12,171
-Chatham County 	265,128
-Chattahoochee County 	11,267
-Chattooga County 	26,015
-Cherokee County 	214,346
-Clarke County 	116,714
-Clay County 	3,183
-Clayton County 	259,424
-Clinch County 	6,798
-Cobb County 	688,078
-Coffee County 	42,356
-Colquitt County 	45,498
-Columbia County 	124,053
-Cook County 	17,212
-Coweta County 	127,317
-Crawford County 	12,630
-Crisp County 	23,439
-Dade County 	16,633
-Dawson County 	22,330
-Decatur County 	27,842
-DeKalb County 	691,893
+Atkinson County
+Bacon County
+Baker County
+Baldwin County
+Banks County
+Barrow County
+Bartow County
+BenHill County
+Berrien County
+Bibb County
+Bleckley County
+Brantley County
+Brooks County
+Bryan County
+Bulloch County
+Burke County
+Butts County
+Calhoun County
+Camden County
+Candler County
+Carroll County
+Catoosa County
+Charlton County
+Chatham County
+Chattahoochee County
+Chattooga County
+Cherokee County
+Clarke County
+Clay County
+Clayton County
+Clinch County
+Cobb1 County
+Cobb2 County
+Coffee County
+Colquitt County
+Columbia County
+Cook County
+Coweta County
+Crawford County
+Crisp County
+Dade County
+Dawson County
+Decatur County
+DeKalb1 County
+DeKalb2 County
 Dodge County 	21,796
 Dooly County 	14,918
 Dougherty County 	94,565
@@ -57,14 +59,18 @@ Fayette County 	106,567
 Floyd County 	96,317
 Forsyth County 	175,511
 Franklin County 	22,084
-Fulton County 	920,581
+Fulton1 County
+Fulton2 County
+Fulton3 County
+Fulton4 County
 Gilmer County 	28,292
 Glascock County 	3,082
 Glynn County 	79,626
 Gordon County 	55,186
 Grady County 	25,011
 Greene County 	15,994
-Gwinnett County 	805,321
+Gwinnett1 County
+Gwinnett2 County
 Habersham County 	43,041
 Hall County 	179,684
 Hancock County 	9,429
