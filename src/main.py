@@ -34,7 +34,7 @@ def main ():
         maps.append(random_map(county_data))
     while (True): #however many times we want to circle through
         for j in maps:
-            scores.append(calc_score(maps[j]))
+            scores.append(calc_score(maps[j]), county_data)
         index, max_score = max(enumerate(my_list), key=operator.itemgetter(1))
         temp = maps[index]
         maps = []
