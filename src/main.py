@@ -11,10 +11,12 @@ combining maps
 calculating scores (whatever we choose for this to mean)
 """
 #a map will be  ____ = [14][] (or possibly shorter if separating large counties)
+import operator
+
 """
 def random_map (county_data):
 
-def comb_map (map1, map2):
+def mutate_map (map1):
 
 def calc_score (map):"""
 
@@ -28,11 +30,15 @@ def main ():
         county_data.append([temp[2], temp[7], temp[4], temp[5]])
     maps = []
     scores = []
-    for i in range(0, 10):
+    for i in range(0, 10): #initializing
         maps.append(random_map(county_data))
-    for j in maps:
-        scores.append(calc_score(maps[j]))
-    while (True):
-
-
+    while (True): #however many times we want to circle through
+        for j in maps:
+            scores.append(calc_score(maps[j]))
+        index, max_score = max(enumerate(my_list), key=operator.itemgetter(1))
+        temp = maps[index]
+        maps = []
+        maps.append(temp)
+        for k in range(0, 5):
+            maps.append(mutate_map(temp))
 if __name__ == "__main__": main()
