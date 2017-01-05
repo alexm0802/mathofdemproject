@@ -9,8 +9,8 @@
   
 ####Next Steps
 
-* Alex is working on making a program which finds out which counties border
-* Anna is beginning to think about an algorithm for creating districts
+* Alex is working on a function which will generate random districts
+* Anna is working on a function that will score districts
   * http://autoredistrict.org/ has some interesting information on how to make our code not suck (basically how to go about finding the best districts
 
 ####Internet Stuff
