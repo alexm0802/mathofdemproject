@@ -3,36 +3,38 @@
 ####Project Goals
 
 * We want to make a map where districts are gerrymandered to ensure as close to proportional representation (PR) as possible
-* This is a thought experiment in producing a new type of democracy that has the same benefits as PR systems (i.e. proportional representation of political parties) and the same benefits of plurality-majority systems (i.e. representatives remain accountable to home districts)
+* This is a thought experiment in producing a new type of democracy that has some of the benefits of PR systems (i.e. proportional representation of political parties) and the benefits of plurality-majority systems (i.e. representatives remain accountable to home districts)
 * We know that the efficiency gap will be very high
 * Extremely gerrymandered districts also have some benefits: very red districts can choose between two Republican candidates and very blue districts can choose between two Democratic candidates (like WA district 7)
-  
+
 ####Next Steps
 
 * Alex is working on a function which will generate random districts
 * Anna is working on a function that will score districts
-  * http://autoredistrict.org/ has some interesting information on how to make our code not suck (basically how to go about finding the best districts
 
-####Internet Stuff
+####Internet Sources
 
-* Maybe just use the Georgia data from the 2016 Presidential Election (but some counties are so fucking big!!!)
-  * https://github.com/tonmcg/County_Level_Election_Results_12-16/blob/master/2016_US_County_Level_Presidential_Results.csv
-* https://www.cs.plu.edu/courses/csci144/fall2016/labs/lab07/lab07.pdf would make it possible to fill in the counties if we can find the correct code (maybe here https://www.cs.plu.edu/courses/csci144/fall2016/assignments.php)
-  * Actually, with the county data file we don't need to use PLU's code, we can just do it in python. I'll work on that file
-* If all of the above components work, we could create another file which contains information on which counties border, so when we create different districts, we can ensure that they are continuous by making sure every county borders at least one other county
+* https://github.com/tonmcg/County_Level_Election_Results_12-16/blob/master/2016_US_County_Level_Presidential_Results.csv
+  * Election results
+* https://www.cs.plu.edu/courses/csci144/fall2016/assignments.php
+  * County outline data
+* http://autoredistrict.org/ 
+  * Has a lot of information on how to do the project
 
-####Pseudo-psuedo code assuming all of the above works
+####Algorithm
 
-* Start with a county, iterate through and add other counties until we reach the threshold (make the threshold the average number of people per legislative district)
+* Generate some random maps
+* Pick the best map
+* Mutate that map
+* Pick the best out of mutated ones and repeat
+* If we have time, we can also create a method that will combine the two best scoring ones
 
+####Assumptions
 
-* Iterate through moving small districts until populations are similar enough
-
-
-* Some sort of method that will swap districts of similar sizes (can be groupings of districts as well) and create a better political fairness value (or whatever that value was called)
-
-
-* Repeat this step until no more switches are possible
+* Consistent population distribution throughout counties (we broke up a few counties that were too big)
+* We will use voting population for population (this was ruled constitutional by SCOTUS)
+* Independent voters are insignificant and can be ignored for making proportional districts
+* 2012 election results approximately represent the political party alignment of citizens. We added noise to the score to represent people changing, but the mean value of the normal distribution used was still 0
 
 ####Notes
 
@@ -42,13 +44,7 @@
 * Georgia is probably a good state choice because it has a lot of small counties and it has a lot of people
 
 
-* Assuming consistent population distribution throughout counties
-
-
-* Some counties might have too many people, so we might not get a very good result BIG ISSUE ACTUALLY... Maybe premake some districts
-
-
-* Finding the code to create the map correctly could be challenging
+* Some counties might have too many people, so we might not get a very good result
 
 
 * The swapping districts will be much more difficult than it looks
@@ -60,9 +56,7 @@
 * Ideally, we write the code so that after doing Georgia, we can do other states (but the above problem of too big counties will be even more problematic in California… Maybe we could do IA, TE, NC or something similar that might work similarly to Georgia, but not every state
 
 
-* Dividing the work on this project will be challenging. We will need to use Github, and also work at different times
-
-####How to push to git
+* How to push to git
 
 *Use git status to ensure everything is working properly*
 
