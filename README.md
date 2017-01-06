@@ -56,7 +56,7 @@
 * Ideally, we write the code so that after doing Georgia, we can do other states (but the above problem of too big counties will be even more problematic in California… Maybe we could do IA, TE, NC or something similar that might work similarly to Georgia, but not every state
 
 
-* How to push to git
+####How to push to git
 
 *Use git status to ensure everything is working properly*
 
