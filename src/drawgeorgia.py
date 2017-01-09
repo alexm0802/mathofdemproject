@@ -1,4 +1,5 @@
 from graphics import *
+import random
 
 def is_numeric(s):
     s = s.replace ('-','')
@@ -7,7 +8,7 @@ def is_numeric(s):
     s = s.replace ('.','')
     return s.isdigit()
 
-def draw_county(county):
+def draw_county(county, color):
     f = open('data/georgia_county_locations.txt', 'r')
     xcoord = []
     ycoord = []
@@ -31,7 +32,7 @@ def draw_county(county):
         y_length-((float(ycoord[i]) - float(ymin))/y_range)*y_length)
         vertices.append(p)
     n = Polygon(vertices)
-    n.setFill('white')
+    n.setFill(color)
     n.setOutline('black')
     n.setWidth(2)
     n.draw(win)
@@ -46,7 +47,7 @@ y_range = float(ymax) - float(ymin)
 x_length = 500
 y_length = abs(x_length*y_range/x_range)
 win = GraphWin('Georgia', x_length, y_length)
-
+"""
 g = open('data/ga_counties.txt', 'r')
 for line in g:
     line = line.split()
@@ -54,9 +55,22 @@ for line in g:
     for i in line:
         if (i == "County"):
             county_name = county_name[:-1] #fencepost error
-            draw_county(county_name)
+            draw_county(county_name, 'white')
         else:
             county_name += i + ' '
-g.close()
+g.close() """
+#color_rgb(r, g, b)
+#color = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'
+g = open('data/map.txt')
+for line in g:
+	temp = line.split(', ')
+	r = random.randrange(256)
+	b = random.randrange(256)
+	g = random.randrange(256)
+	color = color_rgb(r, g, b)
+	del temp[len(temp)-1]
+	print(temp)
+	for t in temp:
+		draw_county(t, color)
 win.getMouse()
 win.close()
