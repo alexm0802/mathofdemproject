@@ -1,6 +1,11 @@
 from adjacentcounty import get_adjacent_counties
 import numpy as np
 
+<<<<<<< HEAD
+print("run begins now")
+
+=======
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 f = open('data/georgia_2012_results.csv', 'r')
 f.readline()
 county_data = [] #county_data[0]=names, county_data[1]=total votes
@@ -29,12 +34,18 @@ ideal_district_size = total_state_voting_population/NUM_DISTRICTS
 #does all the necessary things when a county is added to a district; it removes all references to it from certain arrays
 #this makes sure a county won't be districted twice
 def county_districted(county):
+<<<<<<< HEAD
+	county_index = get_county_data_index(county)
+	adj_counties = []
+	adj_counties = adjacent_counties[county_index]
+=======
 	county_index = -1
 	adj_counties = []
 	for i in range(0, len(county_data)):
 		if county_data[i][0]==county:
 			county_index = i
 			adj_counties = adjacent_counties[i]
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 	county_data.remove(county_data[county_index])
 	adjacent_counties.remove(adj_counties)
 	for i in range(0, len(adjacent_counties)):
@@ -49,10 +60,23 @@ def county_districted(county):
 def get_multi_county_district_index(county):
 	for i in range(0, len(multi_county_districts)):
 		district_to_search = multi_county_districts[i]
+<<<<<<< HEAD
+		if len(district_to_search) == 4:
+			print(district_to_search)
+			print(county)
+			if district_to_search == county:
+				return i
+		for j in range(0, len(district_to_search)):
+			if district_to_search[j] == county:
+				return i
+	print("error - county cannot be found in a multi county district")
+	print(county)
+=======
 		for j in range(0, len(district_to_search)):
 			if multi_county_districts[i][j][0] == county:
 				return i
 	print("error")
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 	return -1
 
 def get_county_data_index(county):
@@ -69,32 +93,66 @@ def seed_multi_county_districts():
 		random_int = np.random.randint(0, random_ceiling)
 		if random_int < len(county_data):
 			seed = county_data[random_int]
+<<<<<<< HEAD
+			district = []
+			district.append(seed)
+			multi_county_districts.append(district)
+=======
 			multi_county_districts.append(seed)
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 			counties_districted.append(seed)
 			county_districted(seed[0])
 	return counties_districted
 
 def add_adjacent_counties(counties_recently_districted, looped):
+<<<<<<< HEAD
+	stuff_done = []
+	for i in range(0, len(counties_recently_districted)):
+		recent_county = counties_recently_districted[i]
+		district_index = get_multi_county_district_index(recent_county)
+		all_adj_counties = []
+		all_adj_counties = get_adjacent_counties(recent_county[0])
+=======
 	counties_recently_districted = []
 	for i in range(0, len(counties_recently_districted)):
 		recent_county = counties_recently_districted[i]
 		district_index = get_multi_county_district_index(recent_county)
 		all_adj_counties = get_adjacent_counties(recent_county)
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 		for j in range(0, len(all_adj_counties)):
 			if j < len(all_adj_counties):
 				county_index = get_county_data_index(all_adj_counties[j]) 
 				if county_index != -1:
 					multi_county_districts[district_index].append(county_data[county_index])
+<<<<<<< HEAD
+					stuff_done.append(county_data[county_index])
+					county_districted(county_data[county_index][0])
+	print(len(stuff_done))
+	print(stuff_done)
+	print(len(county_data))
+	print(" counties left to be districted!")
+	while len(county_data) > 0:
+		add_adjacent_counties(stuff_done, looped)
+	"""
+	while len(county_data) > 0 and looped < 10:
+		looped += 1
+=======
 					counties_recently_districted.append(county_data[county_index][0])
 					county_districted(county_data[county_index])
 	looped = looped + 1
 	while len(county_data) > 0 and looped < 10:
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 		print("looped")
 		print(looped)
 		print("times")
 		print(len(county_data))
 		print(" counties left to be districted!")
+<<<<<<< HEAD
+		"""
+	#add_adjacent_counties(stuff_done, looped)
+=======
 		add_adjacent_counties(counties_recently_districted, looped)
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 #this makes each big county its own individual district
 index = 0
 while index < len(county_data):
@@ -107,10 +165,33 @@ while index < len(county_data):
 print("single county districts made ")
 print(districts)
 
+<<<<<<< HEAD
+NUM_MULTI_COUNTY_DISTRICTS = 14
+def make_districts():
+	seedz = seed_multi_county_districts()
+	print(len(seedz))
+	print(seedz)
+	add_adjacent_counties(seedz, 0)
+	print(multi_county_districts)
+	print(len(county_data))
+	print(" counties left to be districted!")
+	return multi_county_districts
+d = make_districts()
+def write_to_file(d):
+	fi = open("data/map.txt", 'w')
+	for i in range(0, len(multi_county_districts)):
+		distr = multi_county_districts[i]
+		for j in range(0, len(distr)):
+			fi.write(distr[j][0])
+			fi.write(", ")
+		fi.write("\n")
+write_to_file(d)
+=======
 NUM_MULTI_COUNTY_DISTRICTS = 10
 seedz = seed_multi_county_districts()
 print(len(seedz))
 add_adjacent_counties(seedz, 0)
+>>>>>>> a286c72a34888891dee37387462150a907262f8c
 """
 #this seeds the 10 multi county districts with random districts
 while len(multi_county_districts) < NUM_MULTI_COUNTY_DISTRICTS:
