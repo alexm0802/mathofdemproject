@@ -68,11 +68,12 @@ for line in fi:
 		percentr += int(county_data[index][2])
 		pop += int(county_data[index][2])+int(county_data[index][3])
 	percentr /= pop
+	print(temp[0], ' percent r: ', percentr)
 	probability = prob(percentr)
-	r = percentr * 255
-	b = (1-percentr) * 255
+	r = probability * 255
+	b = (1-probability) * 255
 	color = color_rgb(r, 0, b)
-	print(temp[0], ": ", percentr)
+	print(temp[0], ": ", probability)
 	for u in temp:
 		draw_county(u, color)
 

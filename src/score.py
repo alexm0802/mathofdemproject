@@ -13,7 +13,7 @@ def get_column(col_num, data):
     return column
 
 def prob (percent_r):
-	return 1/(1+math.exp(-0.7*(percent_r-.50)))
+	return 1/(1+math.exp(-0.7*(percent_r*100-50)))
 
 def calc_score (n_map, county_data):
     ideal_breakdown = sum(list(map(int, get_column(2, county_data))))/(sum(list(map(int, get_column(2, county_data))))+sum(list(map(int, get_column(3, county_data)))))
