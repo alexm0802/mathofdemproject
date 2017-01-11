@@ -1,5 +1,5 @@
 from graphics import *
-import random
+from score import *
 
 def is_numeric(s):
     s = s.replace ('-','')
@@ -47,31 +47,35 @@ y_range = float(ymax) - float(ymin)
 x_length = 500
 y_length = abs(x_length*y_range/x_range)
 win = GraphWin('Georgia', x_length, y_length)
-"""
-g = open('data/ga_counties.txt', 'r')
-for line in g:
-    line = line.split()
-    county_name = ''
-    for i in line:
-        if (i == "County"):
-            county_name = county_name[:-1] #fencepost error
-            draw_county(county_name, 'white')
-        else:
-            county_name += i + ' '
-g.close() """
-#color_rgb(r, g, b)
-#color = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'
+
+county_data = [] #county_data[0]=names, county_data[1]=total votes
+                #county_data[2]=rep votes, county_data[4]= dem votes
+f = open('data/georgia_2012_results.csv', 'r')
+for line in f:
+	temp = line.split(',')
+	county_data.append([temp[2], temp[7], temp[4], temp[5]])
+f.close()
+names = get_column(0, county_data)
+
 fi = open('data/map.txt')
 for line in fi:
 	temp = line.split(', ')
-	r = random.randrange(256)
-	b = random.randrange(256)
-	g = random.randrange(256)
-	color = color_rgb(r, g, b)
 	del temp[len(temp)-1]
-	print(temp)
+	percentr = 0
+	pop = 0
 	for t in temp:
-		draw_county(t, color)
+		index = names.index(t)
+		percentr += int(county_data[index][2])
+		pop += int(county_data[index][2])+int(county_data[index][3])
+	percentr /= pop
+	probability = prob(percentr)
+	r = percentr * 255
+	b = (1-percentr) * 255
+	color = color_rgb(r, 0, b)
+	print(temp[0], ": ", percentr)
+	for u in temp:
+		draw_county(u, color)
+
 fi.close()
 win.getMouse()
 win.close()
