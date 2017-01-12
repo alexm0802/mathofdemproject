@@ -65,7 +65,7 @@ for i in range(0, len(county_names)):
 						num = num + 1
 		if num > 1 and i != j:
 			adj_counties_outer.append(county_names[j])
-			print("appending " + county_names[j] + " to " + county_names[i])
+			#print("appending " + county_names[j] + " to " + county_names[i])
 	adjacent_counties.append(adj_counties_outer)
 
 
@@ -88,8 +88,41 @@ def are_these_counties_adjacent(county1, county2):
 				return True
 		return False
 
+def get_adjacent_counties(county):
+	if county == "Cobb1":
+		return ["Bartow", "Cherokee", "Fulton2"]
+	if county == "Cobb2":
+		return ["Paulding", "Douglas", "Fulton2", "Fulton3"]
+	if county == "Fulton1":
+		return ["Forsyth", "Cherokee", "Fulton2", "DeKalb1", "Gwinnett2"]
+	if county == "Fulton2":
+		return ["Fulton1", "Fulton3", "DeKalb2", "Clayton", "Cobb1"]
+	if county == "Fulton3":
+		return ["Fulton2", "Fulton4", "Fayette", "Clayton", "Douglas", "Cobb2"]
+	if county == "Fulton4":
+		return ["Douglas", "Carroll", "Coweta", "Fulton3"]
+	if county == "DeKalb1":
+		return ["Fulton1", "DeKalb2", "Henry", "Rockindale", "Gwinnett2"]
+	if county == "DeKalb2":
+		return ["Fulton2", "Clayton", "Henry", "DeKalb1"]
+	index_of_county = -1
+	for i in range(0, len(county_names)):
+		if county_names[i] == county:
+			index_of_county = i
+	if index_of_county == -1:
+		print("county name invalid. try again")
+		return
+	else:
+		return adjacent_counties[index_of_county]
+
+print("adjacentcounty.py is ready to go!")
+print(get_adjacent_counties("Muscogee"))
+"""
 print(are_these_counties_adjacent("Appling", "JeffDavis"))
 print(are_these_counties_adjacent("Appling", "Houston"))
 print(are_these_counties_adjacent("Appling", "apples"))
 print(are_these_counties_adjacent("apples", "Appling"))
+print(get_adjacent_counties("Appling"))
+print(get_adjacent_counties("apples"))
 print("done")
+"""
